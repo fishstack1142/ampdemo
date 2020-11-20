@@ -1,7 +1,7 @@
 function Box() {
   return (
     <div>
-      <h4>first amp....</h4>
+      <h4>second amp....</h4>
     </div>
   );
 }
