@@ -9,8 +9,9 @@ function Box() {
   });
 
   async function fetchData() {
-    const result = await axios(`https://swapi.dev/api/people/${number}/`);
-    setName(result.data.name)
+    const result = await fetch(`https://swapi.dev/api/people/${number}/`);
+    console.log(result)
+    // setName(result.data.name)
   }
 
   const handleChange = event => {
@@ -27,11 +28,12 @@ function Box() {
 
   return (
     <div>
-      <form onSubmit={handleSubmit}>
-        <input type="text" onChange={handleChange} />
-        <input type="submit" value="Submit" />
-      </form>
-      <h4>The name is {name}</h4>
+    <form onSubmit={handleSubmit}>
+    <input type="text" onChange={handleChange} />
+    <input type="submit" value="Submit" />
+    </form>
+    <h4>The name is {name}</h4>
+    <h4>value is {process.env.REACT_APP_MOTTO}</h4>
     </div>
   );
 }
